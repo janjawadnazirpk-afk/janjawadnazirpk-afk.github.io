@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Fast Uploader — connecting…</title>
+<style>body{font-family:Segoe UI,Arial,sans-serif;background:#0f1720;color:#e8eef5;padding:48px;text-align:center}</style>
+</head>
+<body>
+<h2>Connecting to Fast Uploader…</h2>
+<p id="m">If nothing happens, make sure Fast Uploader is open on this PC and try Connect again.</p>
+<script>
+// Facebook / TikTok send the sign-in answer here (they need an https address).
+// This page only hands it straight to Fast Uploader running on THIS computer; nothing is stored or sent anywhere else.
+(function () {
+  var q = window.location.search || "";
+  if (!q) { document.getElementById("m").textContent = "Nothing to do here."; return; }
+  window.location.replace("http://localhost:53682/callback" + q);
+})();
+</script>
+</body>
+</html>
